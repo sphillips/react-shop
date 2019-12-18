@@ -7,7 +7,6 @@ import Homepage from './pages/homepage/homepage.component'
 import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header.component'
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
-import SignIn from './components/sign-in/sign-in.component'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 
 class App extends React.Component {
@@ -49,12 +48,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route path="/shop" component={ShopPage} />
+          <Route path="/signIn" component={SignInAndSignUp} />
           <Route path="/sign-in-and-sign-up" component={SignInAndSignUp} />
-          <Route path="/signIn" component={SignIn} />
         </Switch>
       </div >
     )
